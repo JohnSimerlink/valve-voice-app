@@ -47,7 +47,7 @@ const CHARACTERS_URLS_MAP = {
     [CHARACTER_NAMES.TRINITY]: TRINITY_URLS,
 };
 function isValidName(name) {
-    const exists = Object.keys(CHARACTERS)
+    const exists = Object.keys(CHARACTER_NAMES)
         .some(key => key.name === name)
     return exists
 }
@@ -97,12 +97,11 @@ app.setHandler({
     },
 
     [intentNames.WHICH_CHARACTER_RESPONSE](character){
-        if (!isValidName) {
+        if (!isValidName(character.value)) {
             this.tell('I\'m not sure what character you selected.');
-            return
         }
         const urls = CHARACTERS_URLS_MAP[character.value]
-        const randomAudioUrl = getRandomUrl(url)
+        const randomAudioUrl = getRandomUrl(urls)
         this.speechBuilder().addAudio(randomAudioUrl)
     }
 });
