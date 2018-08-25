@@ -1,4 +1,4 @@
-export const MORPHEUS_URLS = [
+const MORPHEUS_URLS = [
     "https://s3.amazonaws.com/matrix-sounds/Morpheus/As+long+as+the+Matrix+exists....mp3",
     "https://s3.amazonaws.com/matrix-sounds/Morpheus/Body+cannot+live.mp3",
     "https://s3.amazonaws.com/matrix-sounds/Morpheus/Desert+of+the+real.mp3",
@@ -16,3 +16,6 @@ export const MORPHEUS_URLS = [
     "https://s3.amazonaws.com/matrix-sounds/Morpheus/What+is+the+Matrix.mp3",
     "https://s3.amazonaws.com/matrix-sounds/Morpheus/You+wont+have+to.mp3",
 ]
+module.exports = {
+    MORPHEUS_URLS,
+}

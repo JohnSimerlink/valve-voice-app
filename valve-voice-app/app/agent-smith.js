@@ -1,4 +1,4 @@
-export const AGENT_SMITH_URL = [
+const AGENT_SMITH_URL = [
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/A+man+who+calls+himself+Morpheus.mp3",
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Billions+of+people+living+up+their+lives.mp3",
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Goodbye.mp3",
@@ -26,3 +26,6 @@ export const AGENT_SMITH_URL = [
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youre+going+to+help+us.mp3",
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youve+been+contacted+by+a+certain+individual.mp3"
 ];
+module.exports = {
+  AGENT_SMITH_URL
+}
