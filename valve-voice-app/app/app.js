@@ -7,6 +7,8 @@
 const {App} = require('jovo-framework');
 import {MORPHEUS_URLS} from './morpheus-urls'
 
+import { AGENT_SMITH_URL } from "./agent-smith";
+
 const config = {
     logging: true,
 };
@@ -35,33 +37,21 @@ const CHARACTER_NAMES = {
 }
 app.setHandler({
     'LAUNCH': function() {
-        this.toIntent(intentNames.WHICH_PILL);
+        this.toIntent('HelloWorldIntent');
     },
 
     'HelloWorldIntent': function() {
         this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
-    [intentNames.WHICH_PILL]() {
-        this.ask('Which pill you take? The blue pill or the red pill?', 'Tell me if you are going to take the red pill or the blue pill')
+
+    'HelpIntent': function() {
+        this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
-    [intentNames.WHICH_PILL_RESPONSE](color) {
-        switch (color.value) {
-            case PILLS.RED: {
-                this.tell("you stay in Wonderland and I show you how deep the rabbit-hole goes")
-                break
-            }
-            case PILLS.BLUE: {
-                this.tell("The story has ended. You will wake up in your bed and believe whatever you want to believe")
-                break
-            }
-            default:
-            {
-                
-                this.tell(`I\m not really sure what pill you took. You chose ${color} `)
-                break
-            }
-        }
-    }
+
+
+    'MyNameIsIntent': function( name ) {
+        this.tell('Hey ' + name.value + ', nice to meet you!');
+    },
 });
 
 module.exports.app = app;
