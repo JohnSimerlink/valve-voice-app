@@ -20,11 +20,20 @@ const app = new App(config);
 const intentNames = {
     WHICH_PILL: 'WhichPill',
     WHICH_PILL_RESPONSE: "WhichPillResponse",
-}
+    WHICH_CHARACTER: "WhichCharacter",
+    WHICH_CHARACTER_RESPONSE: "WhichCharacterResponse"
+};
 const PILLS = {
     BLUE: 'blue',
     RED: 'red',
-}
+};
+const CHARACTERS = {
+    SMITH:"smith",
+    CYPHER:"cypher",
+    MORPHEUS:"morpheus",
+    NEO:"neo",
+    TRINITY:"trinity"
+};
 app.setHandler({
     'LAUNCH': function() {
         this.toIntent(intentNames.WHICH_PILL);
@@ -39,7 +48,8 @@ app.setHandler({
     [intentNames.WHICH_PILL_RESPONSE](color) {
         switch (color.value) {
             case PILLS.RED: {
-                this.tell("you stay in Wonderland and I show you how deep the rabbit-hole goes")
+                this.tell("Welcome to the Matrix");
+                this.toIntent(intentNames.WHICH_CHARACTER);
                 break
             }
             case PILLS.BLUE: {
@@ -48,9 +58,35 @@ app.setHandler({
             }
             default:
             {
-                
-                this.tell(`I\m not really sure what pill you took. You chose ${color} `)
+                this.tell(`I\'m not really sure what pill you took. You chose ${color} `);
+                this.toIntent(intentNames.WHICH_PILL);
                 break
+            }
+        }
+    },
+    [intentNames.WHICH_CHARACTER]() {
+        this.ask("Who do you want to see?", "Tell me the name of the Matrix character you would like to see.")
+    },
+    [intentNames.WHICH_CHARACTER_RESPONSE](character){
+        switch(character.value){
+            case CHARACTERS.SMITH: {
+                
+            }
+            case CHARACTERS.CYPHER: {
+
+            }
+            case CHARACTERS.MORPHEUS: {
+
+            }
+            case CHARACTERS.NEO: {
+
+            }
+            case CHARACTERS.TRINITY: {
+
+            }
+            default:
+            {
+                this.tell('I\'m not sure what character you selected.')
             }
         }
     }
