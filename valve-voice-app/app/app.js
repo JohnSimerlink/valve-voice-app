@@ -5,7 +5,7 @@
 // =================================================================================
 
 const {App} = require('jovo-framework');
-import {MORPHEUS_URLS} from './morpheus-urls'
+import {MORPHEUS_URLS} from './morpheus-urls';
 import { AGENT_SMITH_URL } from "./agent-smith-url";
 import { CYPHER_URL } from "./cypher-url";
 
@@ -50,6 +50,15 @@ app.setHandler({
         this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
 
+    'Unhandled': function() {
+      let speech = this.speechBuilder()
+              .addText('I didn\'t catch that.')
+              .addBreak('300ms')
+              .addText('Which character do you want to speak to?');
+      let reprompt = this.speechBuilder()
+              .addText('Which character do you want to speak to?');
+      this.ask( speech , reprompt );
+     },
 
     'MyNameIsIntent': function( name ) {
         this.tell('Hey ' + name.value + ', nice to meet you!');
