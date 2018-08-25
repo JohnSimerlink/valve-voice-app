@@ -1,0 +1,13 @@
+{
+	"alexaSkill": {
+		"nlu": {
+			"name": "alexa"
+		}
+	},
+	"endpoint": "https://webhook.jovo.cloud/4963a9c0-1e82-4078-aca5-dfe894e10eaa",
+	"googleAction": {
+		"nlu": {
+			"name": "dialogflow"
+		}
+	}
+}
