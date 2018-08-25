@@ -48,7 +48,7 @@ const CHARACTERS_URLS_MAP = {
 };
 function isValidName(name) {
     const exists = Object.keys(CHARACTER_NAMES)
-        .some(key => key.name === name)
+        .some(key => CHARACTER_NAMES[key] === name)
     return exists
 }
 app.setHandler({
