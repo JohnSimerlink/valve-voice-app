@@ -37,7 +37,7 @@ const CHARACTER_NAMES = {
 }
 app.setHandler({
     'LAUNCH': function() {
-        this.toIntent('HelloWorldIntent');
+        this.toIntent(intentNames.WHICH_PILL)
     },
 
     'HelloWorldIntent': function() {
@@ -52,6 +52,27 @@ app.setHandler({
     'MyNameIsIntent': function( name ) {
         this.tell('Hey ' + name.value + ', nice to meet you!');
     },
+    [intentNames.WHICH_PILL]() {
+        this.ask('Which pill you take? The blue pill or the red pill?', 'Tell me if you are going to take the red pill or the blue pill')
+    },
+    [intentNames.WHICH_PILL_RESPONSE](color) {
+        switch (color.value) {
+            case PILLS.RED: {
+                this.tell("you stay in Wonderland and I show you how deep the rabbit-hole goes")
+                break
+            }
+            case PILLS.BLUE: {
+                this.tell("The story has ended. You will wake up in your bed and believe whatever you want to believe")
+                break
+            }
+            default:
+            {
+                
+                this.tell(`I\m not really sure what pill you took. You chose ${color} `)
+                break
+            }
+        }
+    }
 });
 
 module.exports.app = app;
