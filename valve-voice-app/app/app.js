@@ -5,6 +5,8 @@
 // =================================================================================
 
 const {App} = require('jovo-framework');
+import {MORPHEUS_URLS} from './morpheus-urls'
+import {NEO_URLS} from './neo-urls'
 
 import { AGENT_SMITH_URL } from "./agent-smith";
 
@@ -43,6 +45,7 @@ const AGENT_SMITH_URL = [
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youve+been+contacted+by+a+certain+individual.mp3"
 ];
 
+
 // =================================================================================
 // App Logic
 // =================================================================================
@@ -62,11 +65,12 @@ const CHARACTERS = {
     CYPHER:"cypher",
     MORPHEUS:"morpheus",
     NEO:"neo",
-    TRINITY:"trinity"
+    TRINITY:"trinity",
+    ORACLE: 'oracle'
 };
 app.setHandler({
     'LAUNCH': function() {
-        this.toIntent('HelloWorldIntent');
+        this.toIntent(intentNames.WHICH_PILL)
     },
 
     'HelloWorldIntent': function() {
