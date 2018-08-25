@@ -5,9 +5,6 @@
 // =================================================================================
 
 const {App} = require('jovo-framework');
-import {MORPHEUS_URLS} from './morpheus-urls';
-import { AGENT_SMITH_URL } from "./agent-smith-url";
-import { CYPHER_URL } from "./cypher-url";
 
 const config = {
     logging: true,
@@ -111,3 +108,67 @@ app.setHandler({
 });
 
 module.exports.app = app;
+
+const MORPHEUS_URLS = [
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/As+long+as+the+Matrix+exists....mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Body+cannot+live.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Desert+of+the+real.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Difference.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Dream.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/He+is+the+one.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Human+race+will+never+be+free.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/No+one+can+be+told....mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/No+one+can+be+told.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Offering+the+truth.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Red+or+blue.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/The+Matrix.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Try+to+relax.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/Welcome+to+the+real+world.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/What+is+the+Matrix.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Morpheus/You+wont+have+to.mp3",
+];
+
+const AGENT_SMITH_URL = [
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/A+man+who+calls+himself+Morpheus.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Billions+of+people+living+up+their+lives.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Goodbye.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Have+you+ever+stood+and+stared.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Human+beings+are+a+disease.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Human+defines+their+reality+through+misery.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/I+hate+this+place.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/I+must+get+free.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/I+must+get+out+of+here.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/I+think+we+can+handle+one+little+girl.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Look+out+that+window.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Marvel+and+its+beauty+its+genius.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Matrix+designed+to+be+perfect.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Mr.+Anderson.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Never+send+a+human+to+do+a+machines+job.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/No+one+would+accept+the+program.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Smith++Agent+Smith.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Some+believed+we+lacked+the+language.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Sound+of+inevitability.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/The+future+is+our+world.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/There+was+a+disaster.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/This+zoo+this+prison+this+reality+whatever.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/What+good+is+a+phone+call.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/You+had+your+time.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youre+going+to+help+us.mp3",
+  "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youve+been+contacted+by+a+certain+individual.mp3"
+];
+
+const NEO_URLS = [
+    "https://s3.amazonaws.com/matrix-sounds/Neo/I+give+you+the+finger.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Neo/What+is+The+Matrix.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Neo/What+is+happening.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Neo/You+wont+have+to.mp3",
+];
+
+const CYPHER_URL = [
+  "https://s3.amazonaws.com/matrix-sounds/Cypher/Buckle+your+seatbelt.mp3",
+];
+
+const TRINITY_URLS = [
+    "https://s3.amazonaws.com/matrix-sounds/Trinity/Answer.mp3",
+    "https://s3.amazonaws.com/matrix-sounds/Trinity/Theyre+watching+you.mp3",
+]
