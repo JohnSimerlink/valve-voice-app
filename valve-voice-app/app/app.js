@@ -9,6 +9,8 @@ import {MORPHEUS_URLS} from './morpheus-urls'
 import {NEO_URLS} from './neo-urls'
 
 import { AGENT_SMITH_URL } from "./agent-smith";
+import { getRandomUrl } from './helpers';
+import { TRINITY_URLS } from './trinity-urls';
 
 const config = {
     logging: true,
@@ -60,14 +62,25 @@ const PILLS = {
     BLUE: 'blue',
     RED: 'red',
 };
-const CHARACTERS = {
-    SMITH:"smith",
-    CYPHER:"cypher",
-    MORPHEUS:"morpheus",
-    NEO:"neo",
-    TRINITY:"trinity",
-    ORACLE: 'oracle'
+const CHARACTER_NAMES = {
+    SMITH: 'smith',
+    CYPHER: 'cypher',
+    MORPHEUS: 'morpheus',
+    NEO: 'neo',
+    TRINITY: 'trinity'
+}
+const CHARACTERS_URLS_MAP = {
+    [CHARACTER_NAMES.SMITH]: AGENT_SMITH_URL,
+    [CHARACTER_NAMES.CYPHER]: [],
+    [CHARACTER_NAMES.MORPHEUS]: MORPHEUS_URLS,
+    [CHARACTER_NAMES.NEO]: NEO_URLS,
+    [CHARACTER_NAMES.TRINITY]: TRINITY_URLS,
 };
+function isValidName(name) {
+    const exists = Object.keys(CHARACTERS)
+        .some(key => key.name === name)
+    return exists
+}
 app.setHandler({
     'LAUNCH': function() {
         this.toIntent(intentNames.WHICH_PILL)
@@ -108,27 +121,13 @@ app.setHandler({
         this.ask("Who do you want to see?", "Tell me the name of the Matrix character you would like to see.")
     },
     [intentNames.WHICH_CHARACTER_RESPONSE](character){
-        switch(character.value){
-            case CHARACTERS.SMITH: {
-                this.speechBuilder().addAudio(AGENT_SMITH_URL[Math.floor(Math.random() * AGENT_SMITH_URL.length)]);
-            }
-            case CHARACTERS.CYPHER: {
-                this.tell("lol, noone here");
-            }
-            case CHARACTERS.MORPHEUS: {
-                this.tell("lol, noone here");
-            }
-            case CHARACTERS.NEO: {
-                this.tell("lol, noone here");
-            }
-            case CHARACTERS.TRINITY: {
-                this.tell("lol, noone here");
-            }
-            default:
-            {
-                this.tell('I\'m not sure what character you selected.');
-            }
+        if (!isValidName) {
+            this.tell('I\'m not sure what character you selected.');
+            return
         }
+        const urls = CHARACTERS_URLS_MAP[character.value]
+        const randomAudioUrl = getRandomUrl(url)
+        this.speechBuilder().addAudio(randomAudioUrl)
     }
 });
 
