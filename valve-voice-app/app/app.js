@@ -64,11 +64,6 @@ app.setHandler({
         this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
 
-
-    'MyNameIsIntent': function( name ) {
-        this.tell('Hey ' + name.value + ', nice to meet you!');
-    },
-
     [intentNames.WHICH_PILL]() {
         this.ask('Which pill will you take? The blue pill or the red pill?', 'Tell me if you are going to take the red pill or the blue pill')
     },
@@ -103,6 +98,11 @@ app.setHandler({
         const urls = CHARACTERS_URLS_MAP[character.value]
         const randomAudioUrl = getRandomUrl(urls)
         this.speechBuilder().addAudio(randomAudioUrl)
+        let speech = this.speechBuilder()
+                .addAudio(randomAudioUrl)
+                .addBreak('300ms')
+                .addText('Who else would you like to hear from?')
+        this.ask(speech);
     }
 });
 
