@@ -106,23 +106,23 @@ app.setHandler({
     [intentNames.WHICH_CHARACTER_RESPONSE](character){
         switch(character.value){
             case CHARACTERS.SMITH: {
-                
+                this.speechBuilder().addAudio(AGENT_SMITH_URL[Math.floor(Math.random() * AGENT_SMITH_URL.length)]);
             }
             case CHARACTERS.CYPHER: {
-
+                this.tell("lol, noone here");
             }
             case CHARACTERS.MORPHEUS: {
-
+                this.tell("lol, noone here");
             }
             case CHARACTERS.NEO: {
-
+                this.tell("lol, noone here");
             }
             case CHARACTERS.TRINITY: {
-
+                this.tell("lol, noone here");
             }
             default:
             {
-                this.tell('I\'m not sure what character you selected.')
+                this.tell('I\'m not sure what character you selected.');
             }
         }
     }
