@@ -6,6 +6,7 @@
 
 const {App} = require('jovo-framework');
 import {MORPHEUS_URLS} from './morpheus-urls'
+import {NEO_URLS} from './neo-urls'
 
 import { AGENT_SMITH_URL } from "./agent-smith";
 
