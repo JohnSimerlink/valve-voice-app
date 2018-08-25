@@ -6,6 +6,8 @@
 
 const {App} = require('jovo-framework');
 
+import { AGENT_SMITH_URL } from "./agent-smith";
+
 const config = {
     logging: true,
 };
@@ -40,7 +42,6 @@ const AGENT_SMITH_URL = [
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youre+going+to+help+us.mp3",
   "https://s3.amazonaws.com/matrix-sounds/AgentSmith/Youve+been+contacted+by+a+certain+individual.mp3"
 ];
-
 
 // =================================================================================
 // App Logic
