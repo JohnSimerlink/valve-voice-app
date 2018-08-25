@@ -5,12 +5,14 @@
 // =================================================================================
 
 const {App} = require('jovo-framework');
+import {MORPHEUS_URLS} from './morpheus-urls'
 
 const config = {
     logging: true,
 };
 
 const app = new App(config);
+
 
 
 // =================================================================================
@@ -24,6 +26,12 @@ const intentNames = {
 const PILLS = {
     BLUE: 'blue',
     RED: 'red',
+}
+const CHARACTER_NAMES = {
+    NEO: 'neo',
+    MORPHEUS: 'morpheus',
+    THE_ORACLE: 'the oracle',
+    ORACLE: 'oracle',
 }
 app.setHandler({
     'LAUNCH': function() {
