@@ -60,11 +60,15 @@ app.setHandler({
     'MyNameIsIntent': function( name ) {
         this.tell('Hey ' + name.value + ', nice to meet you!');
     },
+
+    [intentNames.WHICH_PILL]() {
+        this.ask('Which pill will you take? The blue pill or the red pill?', 'Tell me if you are going to take the red pill or the blue pill')
+    },
+
     [intentNames.WHICH_PILL_RESPONSE](color) {
         switch (color.value) {
             case PILLS.RED: {
-                this.tell("Welcome to the Matrix");
-                this.toIntent(intentNames.WHICH_CHARACTER);
+                this.ask("Welcome to the Matrix. Which character would you like to meet?");
                 break
             }
             case PILLS.BLUE: {
@@ -79,9 +83,11 @@ app.setHandler({
             }
         }
     },
+
     [intentNames.WHICH_CHARACTER]() {
         this.ask("Who do you want to see?", "Tell me the name of the Matrix character you would like to see.")
     },
+
     [intentNames.WHICH_CHARACTER_RESPONSE](character){
         switch(character.value){
             case CHARACTERS.SMITH: {
