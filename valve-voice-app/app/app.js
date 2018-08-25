@@ -6,8 +6,8 @@
 
 const {App} = require('jovo-framework');
 import {MORPHEUS_URLS} from './morpheus-urls'
-
-import { AGENT_SMITH_URL } from "./agent-smith";
+import { AGENT_SMITH_URL } from "./agent-smith-url";
+import { CYPHER_URL } from "./cypher-url";
 
 const config = {
     logging: true,
