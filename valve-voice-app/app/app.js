@@ -34,7 +34,7 @@ app.setHandler({
         this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
     },
     [intentNames.WHICH_PILL]() {
-        this.ask('Which pill you take? The blue pill or the red pill?', 'Tell me if you are going to take the red pill or the blue pill')
+        this.ask('Which pill will you take? The blue pill or the red pill?', 'Tell me if you are going to take the red pill or the blue pill')
     },
     [intentNames.WHICH_PILL_RESPONSE](color) {
         switch (color.value) {
@@ -48,7 +48,7 @@ app.setHandler({
             }
             default:
             {
-                
+
                 this.tell(`I\m not really sure what pill you took. You chose ${color} `)
                 break
             }
